@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2g4f702tf5f1"]
+
+[ext_resource type="Script" path="res://Dialoge.gd" id="1_2b6dg"]
+[ext_resource type="FontFile" uid="uid://ci375ei65nsmc" path="res://ELASTRO.ttf" id="2_hses3"]
+
+[node name="Dialoge" type="Node2D"]
+script = ExtResource("1_2b6dg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -264.0
+offset_top = -125.0
+offset_right = 285.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("2_hses3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next_char" type="Timer" parent="."]
+
+[node name="next_message" type="Timer" parent="."]
+
+[connection signal="timeout" from="next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="next_message" to="." method="_on_next_message_timeout"]
